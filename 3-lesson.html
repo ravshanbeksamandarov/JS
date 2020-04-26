@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+            function Class(first_name, last_name, age, type)
+            {
+                this.name = {
+                    first: first_name,
+                    last:  last_name,
+                    full_name: first_name + ' ' + last_name
+                };
+                this.age = age;
+                this.type = type;
+
+                this.hello = function()
+                {
+                    alert('Salom ' + this.name.full_name);
+                };
+            }
+            var person = new Class('Ravshanbek', 'Samandarov', 20, 'Developer');
+            person.hello();
+
+            var person2 = new Class('Ravshan', 'Ravshan', 20, 'Developer');
+            person2.hello();
+        </script>
+</body>
+</html>
