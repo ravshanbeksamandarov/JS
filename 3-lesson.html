@@ -22,11 +22,37 @@
                     alert('Salom ' + this.name.full_name);
                 };
             }
-            var person = new Class('Ravshanbek', 'Samandarov', 20, 'Developer');
-            person.hello();
+            // var person = new Class('Ravshanbek', 'Samandarov', 20, 'Developer');
+            // person.hello();
 
-            var person2 = new Class('Ravshan', 'Ravshan', 20, 'Developer');
-            person2.hello();
+            // var person2 = new Class('Ravshan', 'Ravshan', 20, 'Developer');
+            // person2.hello();
+            
+            //Homework
+            function Students(full_name, b_day, phone)
+            {
+                this.name = full_name,
+                this.birthday = b_day,
+                this.phone = phone
+            }
+            function Group(name, students)
+            {
+                this.name = name,
+                this.students = students,
+
+                this.print = function()
+                {
+                    console.table(this.students);
+                }
+            }
+                var students = 
+                [
+                    new Students('Ravshanbek', '2000-04-14', '937576699'),
+                    new Students('Baxtiyor', '1999-04-04', '937576699'),
+                ];
+                var group = new Group('942-18', students);
+                group.print();
+                
         </script>
 </body>
 </html>
