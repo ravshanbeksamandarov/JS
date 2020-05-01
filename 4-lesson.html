@@ -4,10 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        div#messageBox {
+            background: green;
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            padding-top: 20%;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left:0;
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <script>
+    <div style="text-align:center;">     
+        <h3 id="title">My site</h3>    
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem unde?</p>   
+    </div>
+    <form>
+        <input id="aValue" type="number"> + <input id="bValue" type="number">
+        <button onclick="calc()" type="button">Xisoblash</button>
+    </form>
+    <div id="messageBox">
+        Text test
+    </div>
+
+    <ol id="students-list">
         
+    </ol>
+
+    <script>
+        setTimeout(function(){
+           // console.log('Salom dunyo');
+        }, 4000);
+        setInterval(function(){
+            //console.log('Salom dunyo');
+        }, 4000);
+        
+        //DOM
+        //var myTitle = document.getElementById('title');
+
+//         window.onload = function () {    
+//         var colors = ['yellow', 'orange', 'red', 'black', 'blue', 'green', 'gold'];
+
+//         setInterval(function () {
+//             document.getElementById('title').style.color =
+//             colors[Math.floor(Math.random()*colors.length)];
+//         }, 1000);
+// }
+        function calc()
+        {
+            var a = document.getElementById('aValue').value;
+            var b = document.getElementById('bValue').value;
+            var result = parseFloat(a) + parseFloat(b);
+            
+            messageBox(result);
+           // alert(result);
+        }      
+        function messageBox(text)
+        {
+            var box = document.getElementById('messageBox');
+
+            box.innerText = text;
+            box.style.display = 'block';
+            setTimeout(function()
+            {
+                box.style.display = 'none';
+            }, 4000);
+        }     
+        //Home work
+        var students = [
+        {name: 'Ravshan', age: 20},
+        {name: 'Baxtiyor', age: 22},
+        {name: 'Jamshid', age: 21},
+        {name: 'Temur', age: 22},
+        ];
+        
+        var list_content = document.getElementById('students-list');
+
+        for (var i = 0; i < students.length; i++)
+        {
+            var full_name = students[i].name+'('+students[i].age+')';
+            var li = document.createElement('li');
+            li.innerText = full_name;
+            list_content.append(li);
+        }
+    
     </script>
 </body>
 </html>
