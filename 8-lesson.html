@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+</head>
+<body>
+    <div id="my-content"></div>
+
+    <div class="students"></div>
+    <div class="students"></div>
+    <div class="students"></div>
+    <div class="students"></div>
+    <div class="students"></div>
+    <div class="students"></div>
+    <div class="students"></div>
+
+    <form action="">
+        <input name="user_name" type="text">
+        <input id="age" type="text">
+        <input class="my-class object-class show-class select-class" type="text">
+        <button type="button">Get Value</button>
+    </form>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    
+    <script>
+        //document.getElementById('my-content').innerText="Salom dunyo JS";
+        $('#my-content').text('salom dunyo JQ');
+
+        $('#my-content').html('<h1>Salom dunyo</h1>');
+
+        $('.students').text('Ravshanbek Samandarov').css({background: 'gold'});
+
+        //$('#my-content').fadeOut('5000');
+        //$('#my-content').slideUp(3000);
+        $('#my-content').hide();    //show();
+        $('#my-content').slideDown(3000); ////.fadeIn()
+
+        $('button').click(function()
+        {
+            var val = $('input[name=user_name]').val();
+            var val2 = $('input#age').val();
+            var val3 = $('input.select-class').val();
+            console.log(val, ' ', val2, ' ', val3);
+            $('input[name=user_name]').val('John Doe');
+        });
+
+    </script>
+
+</body>
+</html>
